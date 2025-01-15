@@ -13,4 +13,6 @@
 
 
 
-//uitloggen ga naar QUIZ.php
+ //uitloggen ga naar QUIZ.php -->
+ <
+    

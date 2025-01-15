@@ -1,52 +1,74 @@
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #1E3A5F; 
+    background-color: #1E3A5F; /* Donkerblauwe achtergrond */
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    text-align: center;
-    padding: 20px; 
-}
-
-.header {
-    width: 400px; 
-    height: 150px; 
-    border: 3px solid white; 
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 40px;
-    margin: 0 auto 40px; 
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Breedte van de container */
+    text-align: center;
+    margin: 20px; /* Ruimte tussen de containers */
 }
 
-.options {
-    display: flex;
-    justify-content: center;
-    gap: 50px; 
+.form-titel {
+    margin-bottom: 20px;
 }
 
-.spacer {
-    height: 50px; 
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
 }
 
-.option {
-    width: 300px; 
-    height: 80px; 
-    border: 3px solid white; 
-    border-radius: 40px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Breedte minus padding */
+    padding: 10px;
+    margin: 5px auto; /* Automatische marge voor centreren */
+    border: 2px solid white;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
+    outline: none;
+    text-align: center; /* Centraal uitlijnen van tekst */
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder kleur */
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: white;
+    color: #1E3A5F; /* Tekstkleur van de knop */
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 100%; /* Volledige breedte voor de knop */
 }
 
-.option:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.or {
+    margin: 20px 0;
+}
+
+.link {
+    margin-top: 10px;
 }

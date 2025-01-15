@@ -1,0 +1,52 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1E3A5F; 
+}
+
+.container {
+    text-align: center;
+    padding: 20px; 
+}
+
+.header {
+    width: 400px; 
+    height: 150px; 
+    border: 3px solid white; 
+    border-radius: 40px;
+    margin: 0 auto 40px; 
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 50px; 
+}
+
+.spacer {
+    height: 50px; 
+}
+
+.option {
+    width: 300px; 
+    height: 80px; 
+    border: 3px solid white; 
+    border-radius: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}

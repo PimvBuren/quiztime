@@ -30,15 +30,14 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   // echo "Connected successfully <br>";
   
-  // hier kan je kiezen wat je wil pakken uit de databas
+  // hier kan je kiezen wat je wil pakken uit de database
   $stmt = $conn->prepare(" SELECT * FROM `vragen`");
   $stmt->execute();
  // set the resulting array to associative
  
  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
- foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-  echo "<div>" . $v . "</div>"; // Elk element in een nieuw <div>-blok
-}
+  $data = $stmt->fetchAll();
+ $elements = [];
 
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();

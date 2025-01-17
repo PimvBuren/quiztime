@@ -47,7 +47,31 @@ echo "</table>";
 
 
 
+// Initialiseer de score en index
+if (!isset($_SESSION['score'])) {
+  $_SESSION['score'] = 0;
+}
 
+if (!isset($_SESSION['index'])) {
+  $_SESSION['index'] = 0; // Initialiseer de index bij de eerste keer
+}
+
+// Controleer of er een POST-verzoek is
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $index = $_SESSION['index']; // Haal de huidige index op
+  $correctAnswer = $data[$index]['antwoorden']; // Stel het juiste antwoord in
+  $userAnswer = $_POST['answer']; // Ontvang de gekozen waarde
+
+  if ($userAnswer == $correctAnswer) {
+      $_SESSION['score']++; // Verhoog de score met 1
+      echo "<p class='correct'>Correct! Goed gedaan.</p>";
+  } else {
+      echo "<p class='incorrect'>Fout. Probeer het opnieuw.</p>";
+  }
+
+  // Verhoog de index met 1 voor de volgende vraag
+  $_SESSION['index']++;
+}
 
 
 // wachtwoord aanmaken en mail krijgen

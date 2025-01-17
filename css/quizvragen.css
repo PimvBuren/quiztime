@@ -1,4 +1,3 @@
-
 body {
     display: flex;
     justify-content: center;
@@ -6,47 +5,135 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #1E3A5F; /* Donkerblauwe achtergrond */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern lettertype */
 }
 
 .container {
     text-align: center;
-    padding: 20px; /* Extra ruimte rondom de container */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparante achtergrond */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: auto;
 }
 
 .header {
-    width: 400px; /* Vergrote breedte */
-    height: 150px; /* Vergrote hoogte */
-    border: 3px solid white; /* Dikkere rand */
-    border-radius: 10px;
-    margin: 0 auto 40px; /* Automatische marge aan de zijkanten en ruimte onder de header */
+    width: 100%; /* Volledige breedte gebruiken */
+    height: 150px;
+    border: 3px solid white;
+    border-radius: 15px;
+    margin: 0 auto 40px;
     background-color: rgba(255, 255, 255, 0.1);
-}
-
-.options {
-    display: flex;
-    justify-content: center;
-    gap: 50px; /* Ruimte tussen de knoppen */
-}
-
-.spacer {
-    height: 50px; /* Extra ruimte tussen de rijen */
-}
-
-.option {
-    width: 300px; /* Vergrote breedte van de knoppen */
-    height: 80px; /* Vergrote hoogte van de knoppen */
-    border: 3px solid white; /* Dikkere rand */
-    border-radius: 30px; /* Grotere afgeronde hoeken */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 24px;
+    font-weight: bold; /* Vetgedrukte tekst voor de vraag */
+}
+
+.options {
+    display: flex; /* Zorgt ervoor dat de knoppen in een rij zijn */
+    justify-content: center;
+    gap: 20px; /* Ruimte tussen de knoppen */
+}
+
+.spacer {
+    height: 50px;
+}
+
+/* Stijlen voor correcte en incorrecte namen */
+.correct, .incorrect {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px; /* Extra padding voor meer ruimte */
+    border-radius: 10px; /* Rondere hoeken */
+    transition: transform 0.2s; /* Animatie voor hover */
+}
+
+.correct {
+    background-color: rgba(40, 167, 69, 0.2); /* Lichtgroene achtergrond */
+    color: #28a745; /* Groene tekst */
+    font-size: 18px; /* Grotere tekst voor feedback */
+    font-weight: bold; /* Vetgedrukte tekst voor feedback */
+}
+
+.incorrect {
+    background-color: rgba(255, 0, 0, 0.2); /* Lichtrode achtergrond */
+    color: red; /* Rode tekst */
+    font-size: 18px; /* Grotere tekst voor feedback */
+    font-weight: bold; /* Vetgedrukte tekst voor feedback */
+}
+
+.correct:hover, .incorrect:hover {
+    transform: scale(1.05); /* Vergroten bij hover */
+}
+
+/* Stijlen voor de modale pop-up */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.modal-content h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.modal-content button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.option {
+    width: 300px;
+    height: 70px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
     color: white;
     font-weight: bold;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s; 
 }
 
 .option:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #0056b3, #007BFF);
+    transform: scale(1.05);
 }

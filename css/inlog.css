@@ -7,6 +7,17 @@ body {
     background-color: #1E3A5F; /* Donkerblauwe achtergrond */
     color: white;
     font-family: Arial, sans-serif;
+    animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .container {
@@ -17,6 +28,24 @@ body {
     width: 300px; /* Breedte van de container */
     text-align: center;
     margin: 20px; /* Ruimte tussen de containers */
+    transform: translateY(-20px); /* Starting position for bounce */
+    animation: bounceIn 1s ease-out; /* Bounce effect */
+}
+
+/* Bounce animation for the container */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .form-titel {
@@ -32,14 +61,29 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: calc(100% - 20px); /* Breedte minus padding */
-    padding: 10px;
-    margin: 5px auto; /* Automatische marge voor centreren */
+    padding: 15px; /* Aangepaste padding voor consistentie */
+    margin: 10px auto; /* Automatische marge voor centreren */
     border: 2px solid white;
     border-radius: 40px;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     outline: none;
     text-align: center; /* Centraal uitlijnen van tekst */
+    box-sizing: border-box;
+    animation: pulse 1.5s infinite; /* Pulse effect */
+}
+
+/* Pulse effect for inputs */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
 }
 
 input[type="text"]::placeholder,
@@ -56,13 +100,14 @@ input[type="password"]::placeholder {
     color: #1E3A5F; /* Tekstkleur van de knop */
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s; /* Toegevoegd transform voor animatie */
     margin-top: 10px;
     width: 100%; /* Volledige breedte voor de knop */
 }
 
 .btn:hover {
     background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 .or {

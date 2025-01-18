@@ -46,33 +46,37 @@ $conn = null;
 echo "</table>";
 
 
+// Start de sessie
+session_start();
 
-// Initialiseer de score en index
+// Controleer of de score moet worden gereset
+if (isset($_POST['reset'])) {
+    $_SESSION['score'] = 0;
+}
+
+// Initialiseer de score als deze niet bestaat
 if (!isset($_SESSION['score'])) {
-  $_SESSION['score'] = 0;
+    $_SESSION['score'] = 0;
 }
 
-if (!isset($_SESSION['index'])) {
-  $_SESSION['index'] = 0; // Initialiseer de index bij de eerste keer
+$index = 0;
+
+// Verwerk het antwoord als een POST-verzoek is verzonden
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
+    $correctAnswer = $data[$index]['antwoorden']; // Stel het juiste antwoord in
+    $userAnswer = $_POST['answer']; // Ontvang de gekozen waarde
+
+    if ($userAnswer == $correctAnswer) {
+        $_SESSION['score']++; // Verhoog de score met 1
+        $index++;
+        echo "<p class='correct'>Correct! Goed gedaan.</p>";
+    } else {
+        echo "<p class='incorrect'>Fout. Probeer het opnieuw.</p>";
+    }
 }
 
-// Controleer of er een POST-verzoek is
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $index = $_SESSION['index']; // Haal de huidige index op
-  $correctAnswer = $data[$index]['antwoorden']; // Stel het juiste antwoord in
-  $userAnswer = $_POST['answer']; // Ontvang de gekozen waarde
-
-  if ($userAnswer == $correctAnswer) {
-      $_SESSION['score']++; // Verhoog de score met 1
-      echo "<p class='correct'>Correct! Goed gedaan.</p>";
-  } else {
-      echo "<p class='incorrect'>Fout. Probeer het opnieuw.</p>";
-  }
-
-  // Verhoog de index met 1 voor de volgende vraag
-  $_SESSION['index']++;
-}
-
+// Toon de huidige score
+echo "<p>Huidige score: " . $_SESSION['score'] . "</p>";
 
 // wachtwoord aanmaken en mail krijgen
 

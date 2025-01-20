@@ -46,33 +46,52 @@ $conn = null;
 echo "</table>";
 
 
+// Start de sessie
+session_start();
 
-// Initialiseer de score en index
+// Controleer of de score of index moet worden gereset
+if (isset($_POST['reset'])) {
+    $_SESSION['score'] = 0;
+    $_SESSION['index'] = 0;
+}
+
+// Initialiseer de score en index als deze niet bestaan
 if (!isset($_SESSION['score'])) {
-  $_SESSION['score'] = 0;
+    $_SESSION['score'] = 0;
 }
-
 if (!isset($_SESSION['index'])) {
-  $_SESSION['index'] = 0; // Initialiseer de index bij de eerste keer
+    $_SESSION['index'] = 0;
 }
 
-// Controleer of er een POST-verzoek is
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $index = $_SESSION['index']; // Haal de huidige index op
-  $correctAnswer = $data[$index]['antwoorden']; // Stel het juiste antwoord in
-  $userAnswer = $_POST['answer']; // Ontvang de gekozen waarde
+$index = $_SESSION['index']; // Haal de huidige index op uit de sessie
 
-  if ($userAnswer == $correctAnswer) {
-      $_SESSION['score']++; // Verhoog de score met 1
-      echo "<p class='correct'>Correct! Goed gedaan.</p>";
-  } else {
-      echo "<p class='incorrect'>Fout. Probeer het opnieuw.</p>";
-  }
+// Controleer of er een POST-verzoek is verzonden met een antwoord
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
+    $correctAnswer = $data[$index]['antwoorden']; // Het juiste antwoord voor de huidige vraag
+    $userAnswer = $_POST['answer']; // Het antwoord van de gebruiker
 
-  // Verhoog de index met 1 voor de volgende vraag
-  $_SESSION['index']++;
+    if ($userAnswer == $correctAnswer) {
+        $_SESSION['score']++; // Verhoog de score
+        echo "<p class='correct'>Correct! Goed gedaan.</p>";
+    } else {
+        echo "<p class='incorrect'>Fout. Probeer het opnieuw.</p>";
+    }
+
+    // Verhoog de index na de beoordeling van het antwoord
+    $_SESSION['index']++;
 }
 
+// Controleer of de quiz voorbij is
+if ($index >= count($data)) {
+    echo "<p>Je hebt de quiz voltooid! Je score is: " . $_SESSION['score'] . "</p>";
+    // Reset de quiz of geef de optie om opnieuw te beginnen
+    $_SESSION['index'] = 0;
+    $_SESSION['score'] = 0;
+    exit;
+}
+
+// Toon de huidige score
+echo "<p>Huidige score: " . $_SESSION['score'] . "</p>";
 
 // wachtwoord aanmaken en mail krijgen
 
@@ -101,4 +120,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // toon hoeveel punten je hebt
           // ga dan naar de volgende vraag
 ?>
-

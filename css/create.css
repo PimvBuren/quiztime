@@ -5,67 +5,9 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #1E3A5F; 
+    background: linear-gradient(135deg, #1E3A5F 0%, #1A1A2E 100%);
     color: white;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-form {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 40px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 300px; 
-    text-align: center;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 15px; 
-    margin: 10px 0;
-    border: 2px solid white;
-    border-radius: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    outline: none;
-    text-align: center; 
-    box-sizing: border-box;
-}
-
-input[type="text"]::placeholder {
-    color: rgba(255, 255, 255, 0.7); 
-    text-align: center; 
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    color: #1E3A5F;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #1E3A5F;
-    color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect */
 }
 
@@ -79,11 +21,17 @@ body {
     }
 }
 
+h1 {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect for h1 */
+}
+
+/* Form styling */
 form {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 40px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     width: 300px;
     text-align: center;
     transform: translateY(-20px); /* Starting position for bounce */
@@ -106,6 +54,7 @@ form {
     }
 }
 
+/* Input styling */
 input[type="text"] {
     width: 100%;
     padding: 15px;
@@ -117,34 +66,41 @@ input[type="text"] {
     outline: none;
     text-align: center;
     box-sizing: border-box;
-    animation: pulse 1.5s infinite; 
+    animation: pulse 1.5s infinite; /* Pulse effect */
 }
 
 /* Pulse effect for inputs */
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 5px #FFD700;
     }
     50% {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 15px #FFD700;
     }
     100% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 5px #FFD700;
     }
 }
 
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+/* Button styling */
 button {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    background-color: white;
+    border-radius: 40px; /* Grotere hoeken voor een modernere look */
+    background-color: #FFD700; /* Aangepaste achtergrondkleur */
     color: #1E3A5F;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 215, 0, 0.7); /* Lichtere tint bij hover */
     transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
 }

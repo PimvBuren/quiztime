@@ -106,7 +106,6 @@ body {
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
     width: 100%;
     margin-bottom: 15px;
-    
 }
 
 /* Specifieke stijlen voor elke knop */
@@ -134,4 +133,13 @@ body {
 
 .auth-buttons {
     margin-top: 20px;
+    display: flex; /* Flexbox voor naast elkaar */
+    justify-content: center; /* Centraal uitlijnen */
+    list-style: none; /* Verwijder opsommingstekens */
+    padding: 0; /* Verwijder standaard padding */
+}
+
+.auth-button {
+    width: 45%; /* Maak de knoppen iets smaller */
+    margin: 0 10px; /* Voeg marge toe voor ruimte tussen de knoppen */
 }

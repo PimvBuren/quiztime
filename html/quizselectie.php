@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz selectie</title>
-    <link rel="stylesheet" href="/css/quizselectie.css">
+    <link rel="stylesheet" href="../css/quizselectie.css">
 </head>
 <body>
     
@@ -14,6 +14,7 @@
         <div class="options">
            
             <a href="index.php" class="option">Quiz 1: Voetbal</a></div>
+            
         </div>
     </div>
 

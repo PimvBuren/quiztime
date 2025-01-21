@@ -1,7 +1,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz-time Startpagina</title>
-    <link rel="stylesheet" href="/css/start.css">
+    <link rel="stylesheet" href="../css/start.css">
 </head>
 <body>
     <div class="quiz-container">
@@ -9,10 +9,10 @@
         <p class="quiz-description">
             Test je kennis en ontdek hoeveel je weet! Klik op de onderstaande knop om een quiz te kiezen.
         </p>
-        <a href="../html/quizselectie.html" class="start-button">Quiz selectie</a>
+        <a href="../html/quizselectie.php" class="start-button">Quiz selectie</a>
         <div class="auth-buttons">
-            <a href="../html/inlog.html" class="auth-button login-button">Register</a>
-            <a href="../html/signin.html" class="auth-button signin-button">Login</a>
+            <a href="../html/inlog.php" class="auth-button login-button">Register</a>
+            <a href="../html/signin.php" class="auth-button signin-button">Login</a>
         </div>
     </div>
     

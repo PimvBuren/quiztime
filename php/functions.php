@@ -32,6 +32,7 @@ try {
   
   // hier kan je kiezen wat je wil pakken uit de database
   $stmt = $conn->prepare(" SELECT * FROM `vragen`");
+  
   $stmt->execute();
  // set the resulting array to associative
  
@@ -65,22 +66,27 @@ if (!isset($_SESSION['index'])) {
 
 $index = $_SESSION['index']; // Haal de huidige index op uit de sessie
 
+
+ 
 // Controleer of er een POST-verzoek is verzonden met een antwoord
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
-    $correctAnswer = $data[$index]['antwoorden']; // Het juiste antwoord voor de huidige vraag
+    $correctAnswer = $data[$index-1]['antwoorden']; // Het juiste antwoord voor de huidige vraag
     $userAnswer = $_POST['answer']; // Het antwoord van de gebruiker
 
     if ($userAnswer == $correctAnswer) {
         $_SESSION['score']++; // Verhoog de score
         echo "<p class='correct'>Correct! Goed gedaan.</p>";
+      
     } else {
         echo "<p class='incorrect'>Fout. Probeer het opnieuw.</p>";
     }
+    
 
     // Verhoog de index na de beoordeling van het antwoord
-    $_SESSION['index']++;
+    
 }
 
+$_SESSION['index']++;
 // Controleer of de quiz voorbij is
 if ($index >= count($data)) {
     echo "<p>Je hebt de quiz voltooid! Je score is: " . $_SESSION['score'] . "</p>";
@@ -92,6 +98,7 @@ if ($index >= count($data)) {
 
 // Toon de huidige score
 echo "<p>Huidige score: " . $_SESSION['score'] . "</p>";
+
 
 // wachtwoord aanmaken en mail krijgen
 

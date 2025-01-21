@@ -15,12 +15,12 @@
         <!-- Formulier voor de antwoorden -->
         <form method="POST">
             <div class="options">
-                <button class="option" name="answer" value="1"><?php echo htmlspecialchars($data[$index]['vraag1']); ?></button>
-                <button class="option" name="answer" value="2"><?php echo htmlspecialchars($data[$index]['vraag2']); ?></button>
+                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag1']); ?>"><?php echo htmlspecialchars($data[$index]['vraag1']); ?></button>
+                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag2']); ?>"><?php echo htmlspecialchars($data[$index]['vraag2']); ?></button>
             </div>
             <div class="options">
-                <button class="option" name="answer" value="3"><?php echo htmlspecialchars($data[$index]['vraag3']); ?></button>
-                <button class="option" name="answer" value="4"><?php echo htmlspecialchars($data[$index]['vraag4']); ?></button>
+                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag3']); ?>"><?php echo htmlspecialchars($data[$index]['vraag3']); ?></button>
+                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag4']); ?>"><?php echo htmlspecialchars($data[$index]['vraag4']); ?></button>
             </div>
             <div>
                 <button type="submit" name="reset">Reset Score</button>

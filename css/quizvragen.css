@@ -50,7 +50,20 @@ body {
     margin: 20px 0;
     padding: 15px; /* Extra padding voor meer ruimte */
     border-radius: 10px; /* Rondere hoeken */
-    transition: transform 0.2s; /* Animatie voor hover */
+    animation: pulse 1.5s infinite; /* Pulsatie-effect */
+}
+
+/* Pulsatie-effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .correct {
@@ -130,7 +143,8 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.2s; 
+    transition: background 0.3s, transform 0.2s;
+    animation: pulse 1.5s infinite; /* Pulsatie-effect voor opties */
 }
 
 .option:hover {

@@ -67,8 +67,8 @@ body {
 }
 
 .correct {
-    background-color: rgba(40, 167, 69, 0.2); /* Lichtgroene achtergrond */
-    color: #28a745; /* Groene tekst */
+    background-color: rgba(255, 215, 0, 0.2); /* Lichtgele achtergrond */
+    color: #FFD700; /* Gouden tekst */
     font-size: 18px; /* Grotere tekst voor feedback */
     font-weight: bold; /* Vetgedrukte tekst voor feedback */
 }
@@ -109,14 +109,14 @@ body {
 }
 
 .modal-content h2 {
-    color: #28a745;
+    color: #FFD700; /* Gouden kleur voor de modal titel */
     margin-bottom: 20px;
     font-size: 24px;
 }
 
 .modal-content button {
-    background-color: #28a745;
-    color: white;
+    background-color: #FFD700; /* Gouden kleur voor de knop */
+    color: #1E3A5F; /* Donkerblauwe tekst */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -125,7 +125,7 @@ body {
 }
 
 .modal-content button:hover {
-    background-color: #218838;
+    background-color: rgba(255, 215, 0, 0.7); /* Lichtere tint bij hover */
     transform: scale(1.05);
 }
 
@@ -134,7 +134,7 @@ body {
     height: 70px;
     border: none;
     border-radius: 25px;
-    background: linear-gradient(135deg, #007BFF, #0056b3);
+    background: linear-gradient(135deg, #007BFF, #0056b3); /* Blauwe achtergrond */
     color: white;
     font-weight: bold;
     font-size: 18px;

@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1E3A5F 0%, #1A1A2E 100%); /* Donkerblauwe gradient achtergrond */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.15); /* Lichtdoorzichtige achtergrond */
+    border-radius: 40px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px; /* Breedte van de container */
+    text-align: center;
+    transform: translateY(-20px);
+    animation: bounceIn 1s ease-out; /* Bounce effect */
+}
+
+/* Bounce animation for the container */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header {
+    width: 100%; /* Volledige breedte gebruiken */
+    height: 100px;
+    border: 3px solid #FFD700; /* Gouden rand */
+    border-radius: 15px;
+    margin: 0 auto 20px; /* Automatische marge aan de zijkanten en ruimte onder de header */
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1E3A5F; /* Gouden tekst */
+    font-size: 24px;
+    font-weight: bold; /* Vetgedrukte tekst voor de header */
+}
+
+.description {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column; /* Verticale indeling */
+    align-items: center; /* Centraal uitlijnen */
+    gap: 20px; /* Ruimte tussen de knoppen */
+}
+
+.option {
+    width: 300px; /* Breedte van de knoppen */
+    height: 70px; /* Hoogte van de knoppen */
+    border: 3px solid #FFD700; /* Gouden rand */
+    border-radius: 30px; /* Grotere afgeronde hoeken */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Transparante achtergrond */
+    color: #1E3A5F; /* Gouden tekst */
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: pulse 1.5s infinite; /* Pulsatie-effect */
+}
+
+/* Pulsatie-effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        background-color: #FFD700; /* Lichtgouden achtergrond */
+    }
+    50% {
+        transform: scale(1.05);
+        background-color: #FFD700; /* Lichtere goudkleurige achtergrond */
+    }
+    100% {
+        transform: scale(1);
+        background-color: #FFD700; /* Lichtgouden achtergrond */
+    }
+}
+
+.option:hover {
+    background: rgba(255, 215, 0, 0.3); /* Gouden hover-effect */
+    transform: scale(1.05); /* Vergroten bij hover */
+}

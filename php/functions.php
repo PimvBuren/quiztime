@@ -90,9 +90,16 @@ $_SESSION['index']++;
 // Controleer of de quiz voorbij is
 if ($index >= count($data)) {
     echo "<p>Je hebt de quiz voltooid! Je score is: " . $_SESSION['score'] . "</p>";
+    
     // Reset de quiz of geef de optie om opnieuw te beginnen
     $_SESSION['index'] = 0;
     $_SESSION['score'] = 0;
+
+    // Voeg een knop toe om naar quizselectie.php te gaan
+    echo '<form action="quizselectie.php" method="post">';
+    echo '<button type="submit">Ga naar Quizselectie</button>';
+    echo '</form>';
+    
     exit;
 }
 

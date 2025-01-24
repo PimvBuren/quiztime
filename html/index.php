@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design met Balenken</title>
-    <link rel="stylesheet" href="../css/quizvragen.css">
-    <?php include '../php/functions.php'; ?> 
+    <title>Quiz-time Startpagina</title>
+    <link rel="stylesheet" href="../css/start.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Vraag -->
-        <div class="header"><?php echo htmlspecialchars($data[$index]['opdracht']); ?></div>
-
-        <!-- Formulier voor de antwoorden -->
-        <form method="POST">
-            <div class="options">
-                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag1']); ?>"><?php echo htmlspecialchars($data[$index]['vraag1']); ?></button>
-                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag2']); ?>"><?php echo htmlspecialchars($data[$index]['vraag2']); ?></button>
-            </div>
-            <div class="options">
-                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag3']); ?>"><?php echo htmlspecialchars($data[$index]['vraag3']); ?></button>
-                <button class="option" name="answer" value="<?php echo htmlspecialchars($data[$index]['vraag4']); ?>"><?php echo htmlspecialchars($data[$index]['vraag4']); ?></button>
-            </div>
-            <div>
-                <button type="submit" name="reset">Reset Score</button>
-            </div>
-        </form>
+    <div class="quiz-container">
+        <h1 class="quiz-title">Welkom bij de Quiz-Time!</h1>
+        <p class="quiz-description">
+            Test je kennis en ontdek hoeveel je weet! Klik op de onderstaande knop om een quiz te kiezen.
+        </p>
+        <a href="../html/quizselectie.php" class="start-button">Quiz selectie</a>
+        <div class="auth-buttons">
+            <a href="../html/register.php" class="auth-button login-button">Register</a>
+            <a href="../html/login.php" class="auth-button signin-button">Login</a>
+        </div>
     </div>
-    <script src="../js/script.js"></script>
+    
+    <script src="start.js"></script>
+
 </body>
 </html>
+

@@ -13,7 +13,7 @@
         <p class="description">Selecteer een van de onderstaande quiz om je kennis te testen!</p>
         <div class="options">
            
-            <a href="index.php" class="option">Quiz 1: Voetbal</a></div>
+            <a href="vragen.php" class="option">Quiz 1: Voetbal</a></div>
             
         </div>
     </div>

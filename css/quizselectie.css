@@ -90,7 +90,10 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     animation: pulse 1.5s infinite; /* Pulsatie-effect */
+    text-decoration: none;
 }
+
+
 
 /* Pulsatie-effect */
 @keyframes pulse {

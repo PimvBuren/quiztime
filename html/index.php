@@ -11,7 +11,7 @@
         </p>
         <a href="../html/quizselectie.php" class="start-button">Quiz selectie</a>
         <div class="auth-buttons">
-            <a href="../html/signin.php" class="auth-button login-button">Register</a>
+            <a href="../html/register.php" class="auth-button login-button">Register</a>
             <a href="../html/login.php" class="auth-button signin-button">Login</a>
         </div>
     </div>

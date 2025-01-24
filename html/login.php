@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +27,7 @@
                 <input type="password" name="password" id="password" placeholder="password"required>
                 <label for="password">Password</label>
             </div>
-            <input type="submit" class="btn" value="sign Up" name="signUp">
+            <a href="quizselectie.php" type="submit" class="btn" value="sign Up" name="signUp">signup<a>
             
         </form>
         <p class="or">
@@ -76,7 +77,7 @@
         <!-- TOON spelerpositie -->
         <!-- TOON podium (plekken 1, 2, 3) -->
 
-        <script src="/js/script.js"></script>
+        <script src="../js/script.js"></script>
 </body>
 </html>
 

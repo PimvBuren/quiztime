@@ -1,3 +1,28 @@
+<?php
+
+$host="	localhost";
+$user="root";
+$pass='';
+$db= 'quizbestanden';
+$conn=new mysqli($host,$user, $pass, $db);
+if ($conn->connect_error) {
+    echo'failed to conneect db'. $conn->connect_error;
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- 
  //als je bent ingelogd als admin
         //kan je vragen maken zodat andere mensen die kunnen zien
@@ -14,5 +39,5 @@
 
 
  //uitloggen ga naar QUIZ.php -->
- <
+ 
     

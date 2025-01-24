@@ -26,7 +26,9 @@
         </form>
         <p class="or">
             <div class="link">
-                <p>Don't Haven Acount Yet?</p>
+            <a href="login.php">Don't Haven Acount Yet?</a>
+                
             </div>
+            <script src="../js/script.js"></script>
 </body>
 </html>
